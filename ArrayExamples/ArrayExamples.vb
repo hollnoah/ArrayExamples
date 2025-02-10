@@ -5,6 +5,11 @@ Option Compare Text
 Module ArrayExamples
 
     Sub Main()
+
+        MultiDimentionalArrays()
+
+    End Sub
+    Sub SimpleArrays()
         'arrays are cool
         Dim fruits(5) As String
         Dim names() As String = {"john", "paul", "ringo", "jeff"}
@@ -23,8 +28,18 @@ Module ArrayExamples
             Console.WriteLine(names(i))
 
         Next
-
-
     End Sub
+    Sub MultiDimentionalArrays()
 
+        Dim Students(14, 2) As Single
+
+        'gives three students a grade, indexes them
+        Students(3, 0) = 75.43
+        Students(3, 1) = 85.66
+        Students(3, 2) = 94.74
+
+
+        'set breakpoint here to see the grade for each student 
+        Console.WriteLine()
+    End Sub
 End Module
