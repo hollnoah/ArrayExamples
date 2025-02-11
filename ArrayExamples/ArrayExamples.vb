@@ -1,7 +1,6 @@
 ﻿'header
 Option Explicit On
 Option Strict On
-Option Compare Text
 Module ArrayExamples
 
     Sub Main()
@@ -32,6 +31,9 @@ Module ArrayExamples
     Sub MultiDimentionalArrays()
 
         Dim Students(14, 2) As Single
+        Dim classes() As String = {"Math", "History", "Art"}
+        Dim somethingElse(,) As Integer = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+        Dim threeDimesionArray(,,) As Integer = {{{1}, {2}, {3}}, {{4}, {5}, {6}}, {{7}, {8}, {9}}}
 
         'gives three students a grade, indexes them
         Students(3, 0) = 75.43
