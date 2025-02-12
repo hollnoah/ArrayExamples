@@ -49,8 +49,8 @@ Module ArrayExamples
     Sub TestRandomness()
         Dim beanCounter(20) As Integer
 
-        For i = 1 To 10000
-            beanCounter(randomNumberBetween(3, 10)) += 1
+        For i = 1 To 1000000
+            beanCounter(randomNumberBetween(5, 16)) += 1
         Next
 
         For i = LBound(beanCounter) To UBound(beanCounter)
@@ -64,8 +64,12 @@ Module ArrayExamples
         Dim temp As Single
         Randomize()
         temp = Rnd()
-        temp *= max - min
-        temp += min
-        Return CInt(temp)
+        'establishes range
+        temp *= max - min + 1 '+ 1 'makes range bigger by 1 to fix inclusivity max/min
+        temp += min '- 1 'shifts range down so math.ceiling works
+        'Return CInt(temp) 'bad randomness, has same number on min and max
+        'Return CInt(Int(temp)) 'randomness okay but max not included
+        Return CInt(Math.Floor(temp)) 'randomness okay but max not included
+        'Return CInt(Math.Ceiling(temp)) 'randomness okay but min not included
     End Function
 End Module
