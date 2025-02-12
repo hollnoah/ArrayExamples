@@ -6,7 +6,8 @@ Module ArrayExamples
     Sub Main()
 
         'MultiDimentionalArrays()
-        TestRandomness()
+        'TestRandomness()
+        SplittingStringsIntoArrays()
 
     End Sub
     Sub SimpleArrays()
@@ -72,4 +73,16 @@ Module ArrayExamples
         Return CInt(Math.Floor(temp)) 'randomness okay but max not included
         'Return CInt(Math.Ceiling(temp)) 'randomness okay but min not included
     End Function
+
+    Sub SplittingStringsIntoArrays()
+
+        Dim lotsOfFruits As String = " grape, coconut, banana, dragon fruit, tomato, honeydew melon, lime, guava, blueberry, strawberry, mango, pear "
+        Dim fruits() As String
+
+        fruits = Split(lotsOfFruits, ",")
+
+        For Each fruit In fruits
+            Console.WriteLine(Trim(fruit))
+        Next
+    End Sub
 End Module
